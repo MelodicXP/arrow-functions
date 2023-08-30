@@ -108,76 +108,33 @@ console.log('Hello from the new object function', newObject(['hi', 'hello', 'are
 
 
 
-let sum = function(a, b, c, d) {
-  return a + b + c + d;
-};
+let sum = (a, b, c, d) => `${a + b + c + d}`;
 
-// // TODO: Uncomment the following line of code to see the output in the browser console
+//  TODO: Uncomment the following line of code to see the output in the browser console
 console.log(sum(1, 2, 3, 4));
 
-// Refactor sum as arrow function
-let newSum  = (a, b, c, d) => `${a + b + c + d}`;
-
-// TODO: Done - verified same output as sum function
-console.log(newSum(1, 2, 3, 4));
-
-
-let objectLit = function() {
-  return {
-    key1: 'value1',
-    key2: 'value2',
-    key3: 'value3',
-  };
-};
-
-// // TODO: Uncomment the following line of code to see the output in the browser console
-console.log(objectLit());
-
-// Refactor objectLit as arrow function
-const newObjectLit = () => ({
+let objectLit = () => ({
   key1: 'value1',
   key2: 'value2',
   key3: 'value3'
 });
 
-// TODO: Done - verified same output as objectLit function
-console.log(newObjectLit());
+// TODO: Uncomment the following line of code to see the output in the browser console
+console.log(objectLit());
 
-
-let sumAndProduct = function(a, b) {
-  let sum = a + b;
-  let product = a * b;
-  return [sum, product];
-};
-
-// // TODO: Uncomment the following line of code to see the output in the browser console
-console.log(sumAndProduct(3, 9));
-
-// Refactor sumAndProduct as arrow function
-let newSumAndProduct = (a, b) => {
+let sumAndProduct = (a, b) => {
   let sum = a + b;
   let product = a * b;
   return [sum, product];
 }
 
-// TODO: Done - verified same output as sumAndProduct function
-console.log( newSumAndProduct(3, 9) );
+// TODO: Uncomment the following line of code to see the output in the browser console
+console.log(sumAndProduct(3, 9));
 
+let message = name => `Hello, ${name}!`;
 
-let message = function(name) {
-  return `Hello, ${name}!`;
-};
-
-// // TODO: Uncomment the following line of code to see the output in the browser console
+// TODO: Uncomment the following line of code to see the output in the browser console
 console.log(message('Allie'));
-
-// Refactor message function as arrow function
-let newMessage = name => `Hello, ${name}!`;
-
-// TODO: Done - verified same output as message function
-console.log (newMessage('Allie'));
-
-
 
 let Student = function(name, age, hometown) {
   this.name = name;
@@ -189,31 +146,24 @@ let joe = new Student('Joe Schmoe', 100, 'Anytown, USA');
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this code to break!
-// console.log(joe);
+console.log(joe);
 
 // TODO: After viewing the previous console.log(), return the code to a working state.
 
 
+Student.prototype.greeting = () => `Hi, my name is ${this.name}`;
 
-Student.prototype.greeting = function() {
-  return `Hi, my name is ${this.name}`;
-};
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 // Note that the arrow function will cause this method to break!
-// console.log(joe.greeting());
+console.log(joe.greeting());
 
 // TODO: After viewing the previous console.log(), return the code to a working state.
 
-
-
-Student.courseName = function() {
-  return 'This student is enrolled in Code 301.';
-};
+Student.courseName = () => 'This student is enrolled in Code 301.';
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(Student.courseName());
-
+console.log(Student.courseName());
 
 
 // STEP 11
@@ -223,17 +173,21 @@ Student.prototype.scope = function() {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// joe.scope();
+joe.scope();
 
 Student.prototype.scopeArrow = () => console.log(this);
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// joe.scopeArrow();
+joe.scopeArrow();
 
 // TODO: Write a COMMENT below to answer the following questions.
 // 1. What is "this" when joe.scope() is invoked?
-//
+// Student object for Joe is the scope.
+
+
 // 2. What is "this" when joe.scopeArrow() is invoked?
-//
+// The entire window (global context) is the scope.
+
+
 // 3. Explain why "this" is different when an arrow function is used.
-//
+// The scope matters for arrow functions.  Arrow function captures from the surrounding scope (inherits), so if arrow function is inside non arrow function, the arrow function will capture the same value of 'this' as the non arrow function.  If there is no non arrow function surrounding arrow function, then it will capture global context as 'this' value. 
