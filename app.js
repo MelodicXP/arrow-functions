@@ -131,7 +131,17 @@ let objectLit = function() {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(objectLit());
+console.log(objectLit());
+
+// Refactored objectLit as arrow function
+const newObjectLit = () => ({
+  key1: 'value1',
+  key2: 'value2',
+  key3: 'value3'
+});
+
+// TODO: Done - verified same output as objectLit function
+console.log(newObjectLit());
 
 
 let sumAndProduct = function(a, b) {
