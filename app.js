@@ -112,10 +112,10 @@ let sum = function(a, b, c, d) {
   return a + b + c + d;
 };
 
-// TODO: Uncomment the following line of code to see the output in the browser console
+// // TODO: Uncomment the following line of code to see the output in the browser console
 console.log(sum(1, 2, 3, 4));
 
-// Refactored sum as arrow function
+// Refactor sum as arrow function
 let newSum  = (a, b, c, d) => `${a + b + c + d}`;
 
 // TODO: Done - verified same output as sum function
@@ -130,10 +130,10 @@ let objectLit = function() {
   };
 };
 
-// TODO: Uncomment the following line of code to see the output in the browser console
+// // TODO: Uncomment the following line of code to see the output in the browser console
 console.log(objectLit());
 
-// Refactored objectLit as arrow function
+// Refactor objectLit as arrow function
 const newObjectLit = () => ({
   key1: 'value1',
   key2: 'value2',
@@ -150,10 +150,10 @@ let sumAndProduct = function(a, b) {
   return [sum, product];
 };
 
-// TODO: Uncomment the following line of code to see the output in the browser console
+// // TODO: Uncomment the following line of code to see the output in the browser console
 console.log(sumAndProduct(3, 9));
 
-// Refactored sumAndProduct as arrow function
+// Refactor sumAndProduct as arrow function
 let newSumAndProduct = (a, b) => {
   let sum = a + b;
   let product = a * b;
@@ -168,8 +168,15 @@ let message = function(name) {
   return `Hello, ${name}!`;
 };
 
-// TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(message('Allie'));
+// // TODO: Uncomment the following line of code to see the output in the browser console
+console.log(message('Allie'));
+
+// Refactor message function as arrow function
+let newMessage = name => `Hello, ${name}!`;
+
+// TODO: Done - verified same output as message function
+console.log (newMessage('Allie'));
+
 
 
 let Student = function(name, age, hometown) {
