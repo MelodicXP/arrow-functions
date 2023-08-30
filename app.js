@@ -113,7 +113,13 @@ let sum = function(a, b, c, d) {
 };
 
 // TODO: Uncomment the following line of code to see the output in the browser console
-// console.log(sum(1, 2, 3, 4));
+console.log(sum(1, 2, 3, 4));
+
+// Refactored sum as arrow function
+let newSum  = (a, b, c, d) => `${a + b + c + d}`;
+
+// TODO: Done - verified same output as sum function
+console.log(newSum(1, 2, 3, 4));
 
 
 let objectLit = function() {
